@@ -1,6 +1,6 @@
 <template>
     <div>
-        <Nav>Default layout</Nav>
+        <Nav class="text-2xl font-semibold drop-shadow-md">Nuxt3 Starter with TailwindCSS</Nav>
         <slot/>
     </div>
 </template>
