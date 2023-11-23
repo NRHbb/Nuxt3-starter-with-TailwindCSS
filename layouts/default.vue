@@ -1,6 +1,7 @@
 <template>
     <div>
-        <Nav class="text-2xl font-semibold drop-shadow-md">Nuxt3 Starter with TailwindCSS</Nav>
+        <Navbar/>
+        <Hero/>
         <slot/>
     </div>
 </template>

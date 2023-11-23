@@ -1,17 +1,29 @@
 <template>
-    <div class="flex items-center justify-center m-auto min-h-screen w-full flex-col gap-4">
-        <h1 class="text-5xl font-extrabold text-black drop-shadow-xl text-center">Welcome To Nuxt 3 Basic Starter Pack with Tailwind Css</h1>
-        <NuxtLink to="https://nuxt.com/">
-            <h3>More Documentation</h3>
-        </NuxtLink>
-        <!-- <a href="https://nuxt.com/" class="text-center text-black">More documentation</a> -->
+    <div>
+        <Searchbar @search-movie="searchMovie" :search-error="searchError" />
+        <div class="grid md:grid-cols-4 sm:grid-cols-1 justify-items-center bg-slate-400">
+            <div v-for="movie in movies.results" :key="movie.id">
+                <Moviecard :title="movie.title" :date="movie.release_date" :poster="movie.poster_path"
+                    :movieid="movie.id" />
+            </div>
+        </div>
     </div>
 </template>
+  
+<script setup>
+const searchError = ref(false);
+const searchMovie = (searchInput) => {
+    if (searchInput === "") {
+        searchError.value = true;
+    } else if (searchInput !== "") {
+        searchError.value = false;
+    }
+};
 
-<script setup lang="ts">
+// fetch api movie tmdb
+const {data: movies, error } = await useFetch(() => `/api/movies`);
 
 </script>
-
-<style scoped>
-
-</style>
+  
+<style scoped></style>
+  
