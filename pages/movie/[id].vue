@@ -1,13 +1,12 @@
 <template>
-    <div>
-        <Moviedetail
-      :title="movie.title"
-      :date="movie.release_date"
-      :poster="movie.poster_path"
-      :revenue="movie.revenue"
-      :overview="movie.overview"
-    />
-    </div>
+  <div>
+    <Moviedetail 
+    :title="movie.title" 
+    :date="movie.release_date" 
+    :poster="movie.poster_path" 
+    :revenue="movie.revenue"
+    :overview="movie.overview" />
+  </div>
 </template>
 
 <script setup>
@@ -16,7 +15,9 @@ definePageMeta({
 });
 
 const route = useRoute()
-const { data:movies, error } = await useFetch(`/api/movies/${route.params.id}`)
+
+//fetch single movie
+const { data: movie, error } = await useFetch(`/api/movies/${route.params.id}`)
 // console.log(movies.value)
 
 
@@ -31,6 +32,4 @@ const { data:movies, error } = await useFetch(`/api/movies/${route.params.id}`)
 // );
 </script>
 
-<style lang="scss" scoped>
-
-</style>
+<style lang="scss" scoped></style>
