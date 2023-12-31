@@ -9,14 +9,14 @@
           alt="Placeholder Image"
         /> -->
       <img
-        class="h-[400px] w-[300px] object-cover"
-        :src="poster"
+        class="h-[400px] w-full object-cover"
+        :src="`https:/image.tmdb.org/t/p/w400/` + poster"
         alt="Placeholder Image"
       />
     </div>
 
     <!-- Column 2: Title, Overview, revenue, Buy Button -->
-    <div class="sm:col-span-2 mx-5 rounded-lg px-5 bg-white shadow-xl">
+    <div class="sm:col-span-2 mx-5 rounded-lg px-3 bg-white shadow-xl pt-5">
       <h1 class="font-bold text-2xl mb-5">{{ title }}</h1>
       <h3 class="font-semibold text-lg mb-5">Release Date: {{ date }}</h3>
       <!-- <p class="text-gray-700 text-md mb-8">

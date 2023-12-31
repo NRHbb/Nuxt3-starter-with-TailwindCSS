@@ -2,12 +2,12 @@
 
 <template>
   <div class="bg-white rounded-lg shadow-md overflow-hidden m-4 px-2">
-    <div class="p-1 py-4">
+    <div class="p-1 py-4 flex flex-wrap flex-col">
       <h3 class="font-semibold text-lg mb-2 text-center">{{ title }}</h3>
       <div class="overflow-hidden mb-4">
         <img
-          class="h-[400px] w-[300px] object-cover"
-          :src="`https:/image.tmdb.org/t/p/w300/` + poster"
+          class="h-[400px] w-[300px] object-cover object-center"
+          :src="`https:/image.tmdb.org/t/p/w400/` + poster"
           alt="Placeholder Image"
         />
         <!-- <img
